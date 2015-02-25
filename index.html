@@ -6,7 +6,7 @@
   <style>
 
     html::before{
-      content: "color: red; font-size: 3em";
+      content: "@supports (color: green){ .test{ color: green; } }";
       width: 0;
       height: 0;
       overflow: hidden;
@@ -24,11 +24,15 @@
   <p>Prerequisite for polyfilling pre-parsed CSS declarations which the browser otherwhise ignores.</p>
   <div class="test">I am some content</div>
 
-  <script>
-    var head = document.querySelector('html');
-    var target = document.querySelector('.test');
-    var payload = window.getComputedStyle(head, 'before').content;
-    target.setAttribute('style', payload.substring(1, payload.length-1));
-  </script>
+<script>
+  var head = document.querySelector('html');
+  var payload = window.getComputedStyle(head, 'before').content;
+  var style = document.createElement('style');
+      style.textContent = payload.substring(1, payload.length-1);
+
+  head.appendChild(style);
+
+</script>
+
 </body>
 </html>
