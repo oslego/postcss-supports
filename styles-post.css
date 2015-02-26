@@ -1,0 +1,17 @@
+.test{
+  color: red;
+}
+
+@supports (color: green) and (border-radius: 40px) {
+ .test{
+   color: blue;
+  }
+
+  .dummy{
+    color: lime;
+  }
+}
+
+html::before{
+  content: '[{"condition":"(color: green) and (border-radius: 40px)","rules":" .test{   color: blue;  }  .dummy{    color: lime;  }"}]';
+}

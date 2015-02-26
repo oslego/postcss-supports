@@ -1,0 +1,13 @@
+.test{
+  color: red;
+}
+
+@supports (color: green) and (border-radius: 40px) {
+ .test{
+   color: blue;
+  }
+
+  .dummy{
+    color: lime;
+  }
+}
