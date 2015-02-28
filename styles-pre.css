@@ -2,12 +2,8 @@
   color: red;
 }
 
-@supports (color: green) and (border-radius: 40px) {
+@supports (color: green) {
  .test{
-   color: blue;
-  }
-
-  .dummy{
-    color: lime;
+   color: green;
   }
 }

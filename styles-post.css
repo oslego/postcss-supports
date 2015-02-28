@@ -2,16 +2,12 @@
   color: red;
 }
 
-@supports (color: green) and (border-radius: 40px) {
+@supports (color: green) {
  .test{
-   color: blue;
-  }
-
-  .dummy{
-    color: lime;
+   color: green;
   }
 }
 
-html::before{
-  content: '[{"condition":"(color: green) and (border-radius: 40px)","rules":" .test{   color: blue;  }  .dummy{    color: lime;  }"}]';
+html{
+  content: '[{"condition":"(color: green)","rules":" .test{   color: green;  }"}]';
 }

@@ -13,7 +13,7 @@ var rules = root.nodes.filter(function(rule){
   }
 })
 
-var host = postcss.rule({ selector: 'html::before' })
+var host = postcss.rule({ selector: 'html' })
 host.append({ prop: "content", value: '\'' + JSON.stringify(rules) + '\'' })
 
 root.append(host);

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>@supports front-loading example</title>
+  <link rel="stylesheet" href="styles-post.css">
+</head>
+
+<div class="test">Target content</div>
+
+<script src="supports-polyfill-b.js"></script>
+
+<script>
+  var head = document.querySelector('html'),
+      style = document.createElement('style'),
+      payload = window.getComputedStyle(head).content,
+      supportsRules = JSON.parse(payload.substring(1, payload.length-1));
+
+  supportsRules.forEach(function(atrule){
+    if (window.CSS && window.CSS.supports(atrule.condition)){
+      style.textContent += atrule.rules
+    }
+  })
+
+  head.appendChild(style);
+</script>
+
+</body>
+</html>
