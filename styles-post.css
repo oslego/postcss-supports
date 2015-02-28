@@ -1,0 +1,13 @@
+.test{
+  color: red;
+}
+
+@supports (color: green) {
+ .test{
+   color: green;
+  }
+}
+
+html{
+  content: '[{"condition":"(color: green)","rules":" .test{   color: green;  }"}]';
+}
