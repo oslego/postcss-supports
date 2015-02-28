@@ -5,12 +5,8 @@
   <title>@supports test</title>
   <style>
 
-    html::before{
+    html{
       content: "@supports (color: green){ .test{ color: green; } }";
-      width: 0;
-      height: 0;
-      overflow: hidden;
-      display: block;
     }
 
     .test{
@@ -26,7 +22,7 @@
 
 <script>
   var head = document.querySelector('html');
-  var payload = window.getComputedStyle(head, 'before').content;
+  var payload = window.getComputedStyle(head).content;
   var style = document.createElement('style');
       style.textContent = payload.substring(1, payload.length-1);
 
