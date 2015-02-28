@@ -10,15 +10,21 @@
     }
 
     .test{
-      color: blue;
+      color: red;
     }
 
   </style>
 </head>
 <body>
-  <p>Demonstrates serving styles to JS by embedding them into a pseudo-element on the &lt;html&gt; tag.</p>
-  <p>Prerequisite for polyfilling pre-parsed CSS declarations which the browser otherwhise ignores.</p>
-  <div class="test">I am some content</div>
+  <h1>Serving pre-parsed CSS to JS</h1>
+  <p>Demonstrates serving styles to JS by embedding them into the <var>content</var> property of the &lt;html&gt; tag.</p>
+  <p>Prerequisite for polyfilling pre-parsed CSS rules & declarations which the browser otherwhise ignores if not supported</p>
+
+  <h2>Proof of concept</h2>
+  <p>
+    The following text is colored green, not red, if the <var>@supports</var> CSS rule is supported.
+  </p>
+  <div class="test">Target content</div>
 
 <script>
   var head = document.querySelector('html');
@@ -27,8 +33,6 @@
       style.textContent = payload.substring(1, payload.length-1);
 
   head.appendChild(style);
-
 </script>
-
 </body>
 </html>
