@@ -1,21 +1,21 @@
 {
-  "name": "post-supports",
+  "name": "postcss-supports",
   "version": "1.0.0",
-  "description": "",
+  "description": "PostCSS processor for extracting @supports rules and embedding them into`<html>`'s `content` CSS property to be fed to a JS polyfill at runtime.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/oslego/supports-polyfill.git"
+    "url": "https://github.com/oslego/postcss-supports.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Razvan Caliman <razvan.caliman+dev@gmail.com>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/oslego/supports-polyfill/issues"
+    "url": "https://github.com/oslego/postcss-supports/issues"
   },
-  "homepage": "https://github.com/oslego/supports-polyfill",
+  "homepage": "https://github.com/oslego/postcss-supports",
   "dependencies": {
     "postcss": "^4.0.6"
   }
